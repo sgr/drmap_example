@@ -8,7 +8,7 @@ var parse = function(error, csv) {
 	var data = d3.csv.parseRows(csv, function(r) {
 	    var ops = {center: new google.maps.LatLng(r[1], r[2]), radius: 2, fillColor: "#FF5555"};
 	    var point = new google.maps.Circle(ops);
-	    return {timestamp: r[0], lat: r[1], lng: r[2], ax: r[3], ay: r[4], az: r[5], p: point};
+	    return {timestamp: r[0], lat: r[1], lng: r[2], distance: r[3], ax: r[4], ay: r[5], az: r[6], p: point};
 	});
 	if (data.length > 0) {
 	    data.sort(function(a, b) {
